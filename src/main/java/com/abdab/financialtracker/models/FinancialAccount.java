@@ -2,25 +2,35 @@ package com.abdab.financialtracker.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class FinancialAccount {
     @Id
     @SequenceGenerator(name = "account_sequence", sequenceName = "account_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_sequence")
+    @Column(updatable = false)
     private Long id;
-    private Long amount;
+    @Column(updatable = false)
+    private Long base_amount;
+    private Long current_amount;
+    private String name;
     private String currency;
 
     @ManyToOne
     private User owner;
 
-    public FinancialAccount(User owner, Long amount, String currency) {
-        this.owner = owner;
-        this.amount = amount;
+    public FinancialAccount(Long base_amount, String name, String currency, User owner) {
+        this.base_amount = base_amount;
+        this.current_amount = base_amount;
+        this.name = name;
         this.currency = currency;
+        this.owner = owner;
     }
 }
