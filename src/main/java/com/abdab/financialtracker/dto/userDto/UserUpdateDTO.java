@@ -14,7 +14,4 @@ public class UserUpdateDTO {
     @NotNull
     @Size(min = 5)
     private String username;
-    @NotNull
-    @Email
-    private String email;
 }

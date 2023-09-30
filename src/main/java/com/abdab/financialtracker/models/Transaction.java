@@ -23,7 +23,6 @@ public class Transaction {
     @Column(updatable = false)
     private Long id;
     private Long amount;
-    private Boolean monthly;
     private String name;
 
     private TransactionType transactionType;
@@ -34,14 +33,12 @@ public class Transaction {
     private FinancialAccount account;
 
     public Transaction(Long amount,
-                       Boolean monthly,
                        String name,
                        TransactionType transactionType,
                        TransactionCategory transactionCategory,
                        FinancialAccount account,
                        LocalDate transactionDate) {
         this.amount = amount;
-        this.monthly = monthly;
         this.name = name;
         this.transactionType = transactionType;
         this.transactionCategory = transactionCategory;
