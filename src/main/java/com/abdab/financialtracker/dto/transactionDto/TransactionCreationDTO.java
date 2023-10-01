@@ -11,9 +11,8 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
+@Builder
 public class TransactionCreationDTO {
     @NotNull
     private Long accountId;

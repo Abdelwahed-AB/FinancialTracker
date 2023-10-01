@@ -7,9 +7,8 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
+@Builder
 public class UserRegistrationDTO {
     @NotNull
     @Size(min = 5)

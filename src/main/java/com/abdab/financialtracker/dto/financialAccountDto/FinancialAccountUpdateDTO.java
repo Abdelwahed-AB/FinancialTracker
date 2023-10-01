@@ -6,9 +6,8 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
+@Builder
 public class FinancialAccountUpdateDTO {
     @NotNull
     @Size(min=3)
