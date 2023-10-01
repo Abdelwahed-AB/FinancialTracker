@@ -14,8 +14,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class FinancialAccountServiceImpl implements FinancialAccountService {
-    private FinancialAccountRepository financialAccountRepository;
-    private UserService userService;
+    private final FinancialAccountRepository financialAccountRepository;
+    private final UserService userService;
 
     @Override
     public FinancialAccount createAccount(FinancialAccountCreationDTO account) {
@@ -46,7 +46,7 @@ public class FinancialAccountServiceImpl implements FinancialAccountService {
 
     @Override
     public void deleteAccount(Long id) {
-        FinancialAccount account = getAccountById(id);
+        getAccountById(id);
         financialAccountRepository.deleteById(id);
     }
 }

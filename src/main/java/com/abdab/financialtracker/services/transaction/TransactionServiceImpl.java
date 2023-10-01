@@ -16,9 +16,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService {
-    private TransactionRepository transactionRepository;
-    private FinancialAccountService financialAccountService;
-    private TransactionProcessorService transactionProcessorService;
+    private final TransactionRepository transactionRepository;
+    private final FinancialAccountService financialAccountService;
+    private final TransactionProcessorService transactionProcessorService;
 
     @Override
     @Transactional

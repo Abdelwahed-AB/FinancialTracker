@@ -13,7 +13,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
     @Override
     public User registerUser(UserRegistrationDTO user) {
         Optional<User> emailCheck = userRepository.findByEmail(user.getEmail());
