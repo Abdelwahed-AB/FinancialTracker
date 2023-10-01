@@ -2,7 +2,7 @@ package com.abdab.financialtracker.models;
 
 import com.abdab.financialtracker.models.enums.TransactionCategory;
 import com.abdab.financialtracker.models.enums.TransactionType;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +15,13 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Transaction extends AbsTransaction{
-    public Transaction(Long amount,
-                          String name,
-                          TransactionType transactionType,
-                          TransactionCategory transactionCategory,
-                          FinancialAccount account,
-                          LocalDate transactionDate) {
+public class RecurringTransaction extends AbsTransaction {
+    public RecurringTransaction(Long amount,
+                       String name,
+                       TransactionType transactionType,
+                       TransactionCategory transactionCategory,
+                       FinancialAccount account,
+                       LocalDate transactionDate) {
         super(amount, name, transactionType, transactionCategory, account, transactionDate);
     }
 }
